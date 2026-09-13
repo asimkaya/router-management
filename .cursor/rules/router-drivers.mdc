@@ -1,0 +1,16 @@
+---
+description: Router driver and protocol conventions
+globs: src/core/router/**/*
+alwaysApply: false
+---
+
+# Router driver rules
+
+- All modem models implement `RouterDriver` from `src/core/router/types.ts`.
+- Register new models in `src/core/router/index.ts`.
+- Keep CGI/OID strings and response parsing inside the model folder (e.g. `vx220/`).
+- Use `routerHttp` / `clearRouterSession` from `src/core/router/http.ts` for I/O.
+- Do not call `fetch` directly to the modem from the UI layer.
+- Treat firmware differences as driver concerns; keep UI model-agnostic.
+- When adding write operations (block, QoS), implement read/list first and gate writes behind explicit user actions.
+- Parse responses with shared helpers when possible; avoid brittle full-string matches.

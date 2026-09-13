@@ -1,0 +1,14 @@
+---
+description: Tauri/Rust HTTP bridge conventions
+globs: src-tauri/**/*
+alwaysApply: false
+---
+
+# Tauri / Rust rules
+
+- Rust is the HTTP session bridge, not the business-logic home for CGI parsing.
+- Keep cookie jar behavior in `http_bridge.rs` unless there is a clear reason to split modules.
+- Preserve `Referer` support; many TP-Link endpoints require it.
+- Do not log passwords, cookie values, or full auth URLs containing encrypted credentials.
+- Avoid adding native plugins unless the TypeScript side cannot solve the problem cleanly.
+- After renaming the Rust package/lib, update `main.rs` and `Cargo.toml` together.

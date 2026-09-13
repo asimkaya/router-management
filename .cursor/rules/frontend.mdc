@@ -1,0 +1,16 @@
+---
+description: Frontend UI and feature conventions
+globs: src/features/**/*.{tsx,ts},src/app/**/*.{tsx,ts},src/App.tsx,src/styles/**/*
+alwaysApply: false
+---
+
+# Frontend rules
+
+- React function components only; keep feature folders focused (`auth`, `devices`, …).
+- Session/device orchestration goes through `src/app/session-store.ts`.
+- Do not embed modem CGI payloads or crypto in components.
+- Use existing design tokens in `src/styles/global.css` (ink/paper/accent).
+- Prefer Framer Motion for route/section transitions and list entrance — avoid noisy perpetual motion.
+- No Inter/Roboto/Arial as primary UI fonts; keep Outfit + IBM Plex Mono unless replacing the system deliberately.
+- Avoid purple-gradient “AI SaaS” aesthetics and generic dashboard card spam.
+- Tailwind utility classes are fine; extract a shared component only after reuse is real.

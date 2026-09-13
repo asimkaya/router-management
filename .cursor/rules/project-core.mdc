@@ -1,0 +1,15 @@
+---
+description: Core project architecture and agent safety rails
+alwaysApply: true
+---
+
+# RouterDesk core rules
+
+- Product: local-first open-source desktop modem manager (Tauri + React + TypeScript).
+- Current supported target: TP-Link VX220-G2u only.
+- MVP that must keep working: modem login + connected device list.
+- Language for code/docs/commits: English. Chat with the repo owner may be Turkish.
+- Never commit passwords, cookies, HAR files, router backups, or personal device dumps.
+- Do not add cloud backends, accounts, analytics, or PostgreSQL unless explicitly requested.
+- Prefer small, reviewable changes that preserve existing drivers and UI flows.
+- Before large refactors, summarize the plan and wait for approval when auth/crypto or write-operations are involved.
